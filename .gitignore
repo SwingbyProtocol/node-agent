@@ -1,4 +1,5 @@
-bin
 data/*
 !data/.gitkeep
 vendor
+bin/*
+!bin/amd64_linux

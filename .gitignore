@@ -2,4 +2,4 @@ data/*
 !data/.gitkeep
 vendor
 bin/*
-!bin/amd64_linux
+!bin/linux_amd64

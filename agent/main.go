@@ -69,7 +69,7 @@ func printStats(stats *types.StatsJSON, contName string, now time.Time, startUsa
 		contName,
 		timeElapsed,
 		percentCPUSinceStart,
-		float64(stats.MemoryStats.Usage))
+		float64(stats.MemoryStats.Usage/(1024*1024)))
 
 	err := ioutil.WriteFile(*output, []byte(text), 0777)
 	if err != nil {

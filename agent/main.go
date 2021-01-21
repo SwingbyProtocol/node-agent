@@ -62,6 +62,8 @@ func getStats(cli *client.Client, contName string) *types.StatsJSON {
 func printStats(stats *types.StatsJSON, contName string, now time.Time, startUsage uint64, elapsed time.Duration) {
 	ts := now.UTC().Format(time.RFC3339)
 	timeElapsed := elapsed.Seconds()
+	nowNetwork := stats.Networks
+	log.Info(nowNetwork)
 	percentCPUSinceStart := float64(stats.CPUStats.CPUUsage.TotalUsage-startUsage) / float64(elapsed.Nanoseconds()) * 100
 	// json
 	text := fmt.Sprintf(`{"ts":"%s","c":"%s","timeElapsed":%.2f,"cpu":%.2f,"mUsageMiB":%.1f}`,
